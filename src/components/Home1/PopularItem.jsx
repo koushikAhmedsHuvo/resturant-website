@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { IoCartOutline } from 'react-icons/io5';
-import data from '../data.json'; // Import JSON data
+import data from '../../data.json'; // Import JSON data
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import '../css/buttonStyle1.css';
+import '../../css/buttonStyle1.css';
 
 const PopularItem = () => {
   const popularItems = data.Popular.items; // Get popular items from JSON

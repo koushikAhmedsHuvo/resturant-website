@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import bannerImage from '../assets/banner.png'; // Import the image
-import '../css/buttonStyle.css';
-import jsonData from '../data.json';
+import bannerImage from '../../assets/banner.png';
+import '../../css/buttonStyle.css';
+import jsonData from '../../data.json';
 
 const Banner = () => {
   const [techs, setTechs] = useState({});

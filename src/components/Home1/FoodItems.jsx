@@ -2,9 +2,9 @@ import React, { useEffect, useState, useRef } from 'react';
 import { FaRegHeart } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import foodData from '../data.json';
-import '../css/buttonStyle.css';
-import '../css/buttonStyle1.css';
+import foodData from '../../data.json';
+import '../../css/buttonStyle.css';
+import '../../css/buttonStyle1.css';
 import { BsCartPlus } from 'react-icons/bs';
 
 const FoodItems = () => {

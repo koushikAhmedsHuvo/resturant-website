@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
-import data from '../data.json'; // Import the JSON data
+import data from '../../data.json'; // Import the JSON data
 
 const Resturant = () => {
   useEffect(() => {

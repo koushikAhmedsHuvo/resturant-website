@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { HiChevronDown, HiOutlineSearch, HiX } from 'react-icons/hi';
 import { FaRegHeart, FaAngleDown } from 'react-icons/fa6';
 import { CiShoppingCart, CiLocationOn } from 'react-icons/ci';
 import { IoMenuOutline, IoCallOutline } from 'react-icons/io5';
 import { MdOutlineEmail } from 'react-icons/md';
-import Logo from '../assets/logo.svg';
-import jsonData from '../data.json';
-import '../css/buttonStyle.css';
-import '../css/buttonStyle1.css';
+import Logo from '../../assets/logo.svg';
+import jsonData from '../../data.json';
+import '../../css/buttonStyle.css';
+import '../../css/buttonStyle1.css';
 
 const Navbar = () => {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -192,15 +193,27 @@ const Navbar = () => {
                 onMouseLeave={() => toggleDropdown(index)}
               >
                 <div className="flex">
-                  <span className="text-white p-2 cursor-pointer text-lg relative group">
-                    {item.name}
-                    <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-primary-color transition-all duration-300 group-hover:w-full"></span>
-                  </span>
-
-                  {item.dropdown && (
-                    <span className="text-white mt-3">
-                      <HiChevronDown />
-                    </span>
+                  {/* Non-dropdown menu item */}
+                  {!item.dropdown ? (
+                    <Link
+                      to={item.url}
+                      className="text-white p-2 cursor-pointer text-lg relative group"
+                    >
+                      {item.name}
+                      <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-primary-color transition-all duration-300 group-hover:w-full"></span>
+                    </Link>
+                  ) : (
+                    // Dropdown menu item
+                    <>
+                      <span className="text-white p-2 cursor-pointer text-lg relative group">
+                        {item.name}
+                        <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-primary-color transition-all duration-300 group-hover:w-full"></span>
+                      </span>
+                      <span className="text-white mt-3">
+                        {' '}
+                        <HiChevronDown />
+                      </span>
+                    </>
                   )}
                 </div>
 
@@ -213,7 +226,12 @@ const Navbar = () => {
                           className="px-4 py-2 relative group"
                           onClick={() => toggleDropdown(index)}
                         >
-                          {dropdownItem}
+                          <Link
+                            to={dropdownItem.url}
+                            className="block text-white"
+                          >
+                            {dropdownItem.title}
+                          </Link>
                           <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-primary-color transition-all duration-300 group-hover:w-full"></span>
                         </li>
                       ))}
@@ -254,16 +272,19 @@ const Navbar = () => {
             {/* Buttons */}
             <div className="ml-4">
               {buttons.map((button, index) => (
-                <button
-                  key={index}
-                  className={`font-semibold py-3 px-3 rounded-lg transition duration-500 ease-in-out ${
-                    button.value
-                      ? 'btn btn1 bg-red-600 hover:bg-white hover:text-red-600'
-                      : 'btn btn2 hover:bg-red-600 hover:border-red-600'
-                  }`}
-                >
-                  {button.text}
-                </button>
+                <Link key={index} to={button.path}>
+                  {' '}
+                  {/* Add the Link component */}
+                  <button
+                    className={`font-semibold py-3 px-3 rounded-lg transition duration-500 ease-in-out ${
+                      button.value
+                        ? 'btn btn1 bg-red-600 hover:bg-white hover:text-red-600'
+                        : 'btn btn2 hover:bg-red-600 hover:border-red-600'
+                    }`}
+                  >
+                    {button.text}
+                  </button>
+                </Link>
               ))}
             </div>
           </div>

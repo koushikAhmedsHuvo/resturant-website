@@ -1,31 +1,29 @@
 import React from 'react';
-import Slogan from './components/Slogan';
-import Navbar from './components/Navbar';
-import Banner from './components/Banner';
-import FoodItems from './components/FoodItems';
-import Crafting from './components/Crafting';
-import PopularItem from './components/PopularItem';
-import CustomerSay from './components/CustomerSay';
-import Resturant from './components/Resturant';
-import Footer from './components/Footer';
-import CopyRight from './components/CopyRight';
-import Categories from './components/Categories';
-import Faq from './components/Faq';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage1 from './components/Page/HomePage1';
+import Login from './components/Home1/Login';
+import Signup from './components/Home1/Signup';
+import AboutUs from './components/Page/AboutUs';
+import ContactPage from './components/Page/ContactPage';
+import PrivacyPage from './components/Page/PrivacyPage';
+import MenuPage from './components/Page/MenuPage';
+import UserPage from './components/Page/UserPage';
 
 const App = () => {
   return (
     <>
-      <Navbar />
-      <Banner />
-      <Categories />
-      <FoodItems />
-      <Crafting />
-      <PopularItem />
-      <CustomerSay />
-      <Faq />
-      <Resturant />
-      <Footer />
-      <CopyRight />
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage1 />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/contactus" element={<ContactPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/menu" element={<MenuPage />} />
+          <Route path="/user" element={<UserPage />} />
+        </Routes>
+      </Router>
     </>
   );
 };

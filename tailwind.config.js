@@ -30,6 +30,10 @@ export default {
         'third-color': '#122833',
         'light-black-color': '#0d1634',
         'dark-black': '#000929',
+        'light-white': '#fbfbfb',
+      },
+      animation: {
+        'spin-slow': 'spin 5s linear infinite', // Adjust the duration (5s) as needed
       },
     },
   },

@@ -6,11 +6,11 @@ import {
   FaLinkedin,
 } from 'react-icons/fa';
 import { HiOutlineSearch } from 'react-icons/hi';
-import Logo from '../assets/logo.svg';
-import jsonData from '../data.json';
+import Logo from '../../assets/logo.svg';
+import jsonData from '../../data.json';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
-import '../css/buttonStyle.css';
+import '../../css/buttonStyle.css';
 
 const iconComponents = {
   FaFacebookF: FaFacebookF,

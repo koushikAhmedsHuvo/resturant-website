@@ -5,8 +5,8 @@ import { CiLocationOn } from 'react-icons/ci';
 import { PiHandCoins } from 'react-icons/pi';
 import { HiOutlineDevicePhoneMobile } from 'react-icons/hi2';
 import { FaCaravan } from 'react-icons/fa';
-import data from '../data.json'; // Adjust the path as needed
-import '../css/buttonStyle.css';
+import data from '../../data.json'; // Adjust the path as needed
+import '../../css/buttonStyle.css';
 
 const iconMapping = {
   CiLocationOn: CiLocationOn,

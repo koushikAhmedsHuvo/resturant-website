@@ -12,35 +12,35 @@
   "menu": [
     {
       "name": "Home",
-      "dropdown": ["Home 1", "Home 2", "Home 3"]
+      "url": "/"
     },
     {
-      "name": "Menu"
+      "name": "Menu",
+      "url": "/menu"
     },
     {
       "name": "Pages",
       "dropdown": [
-        "Page 1",
-        "Page 2",
-        "Page 3",
-        "Page 4",
-        "Page 5",
-        "Page 6",
-        "Page 7"
+        { "title": "About Us", "url": "/aboutus" },
+        { "title": "Contact Us", "url": "/contactus" },
+        { "title": "Privacy & Policy", "url": "/privacy" }
       ]
     },
     {
-      "name": "User Dashboard"
+      "name": "User Dashboard",
+      "url": "/user"
     }
   ],
   "buttons": [
     {
       "text": "Login",
-      "value": true
+      "value": true,
+      "path": "/login"
     },
     {
       "text": "SignUp",
-      "value": false
+      "value": false,
+      "path": "/signup"
     }
   ],
   "buttons1": [

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
-import backgroundImage from '../assets/categories-bg.png';
-import faqData from '../data.json'; // Update the path accordingly
+import backgroundImage from '../../assets/categories-bg.png';
+import faqData from '../../data.json'; // Update the path accordingly
 
 const Faq = () => {
   const [visibleFaq, setVisibleFaq] = useState(null);

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
 import { FaStar } from 'react-icons/fa';
-import data from '../data.json'; // Import your JSON data
+import data from '../../data.json'; // Import your JSON data
 
 const CustomerSay = () => {
   const { customerSay } = data; // Extract customer review data from JSON

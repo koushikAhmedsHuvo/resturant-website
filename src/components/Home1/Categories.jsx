@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
 import { PiHamburger } from 'react-icons/pi';
-import backgroundImage from '../assets/categories-bg.png';
-import data from '../data.json';
-import '../css/buttonStyle.css';
-import '../css/crafting.css';
+import backgroundImage from '../../assets/categories-bg.png';
+import data from '../../data.json';
+import '../../css/buttonStyle.css';
+import '../../css/crafting.css';
 
 const Categories = () => {
   const [scrollDirection, setScrollDirection] = useState('down');
