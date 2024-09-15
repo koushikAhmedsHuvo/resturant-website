@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { HiChevronDown, HiOutlineSearch, HiX } from 'react-icons/hi';
 import { FaRegHeart, FaAngleDown } from 'react-icons/fa6';
@@ -9,12 +9,14 @@ import Logo from '../../assets/logo.svg';
 import jsonData from '../../data.json';
 import '../../css/buttonStyle.css';
 import '../../css/buttonStyle1.css';
+import { CartContext } from '../context/CartContext';
 
 const Navbar = () => {
   const [menuVisible, setMenuVisible] = useState(false);
   const [dropdownVisible, setDropdownVisible] = useState({});
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { getCartCount } = useContext(CartContext);
 
   const { logo, menu, buttons, slogan } = jsonData;
   const { dropdownData, sloganText, sloganLink, phoneNumber, email } = slogan;
@@ -263,10 +265,18 @@ const Navbar = () => {
             </div>
 
             {/* Shopping Cart Icon */}
-            <div className="ml-4">
-              <div className="bg-grey-scale-700 rounded-full p-4 hover:bg-primary-color">
-                <CiShoppingCart className="text-white text-xl" />
-              </div>
+            <div className="ml-4 relative">
+              <Link to="/cart">
+                <div className="bg-gray-700 rounded-full p-4 hover:bg-primary-color transition-all duration-300 cursor-pointer">
+                  <CiShoppingCart className="text-white text-xl" />
+                </div>
+                {/* Cart count badge */}
+                {getCartCount() > 0 && (
+                  <span className="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center transform translate-x-1/2 -translate-y-1/2">
+                    {getCartCount()}
+                  </span>
+                )}
+              </Link>
             </div>
 
             {/* Buttons */}

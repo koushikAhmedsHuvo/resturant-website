@@ -1,45 +1,52 @@
 import React from 'react';
 import { FiPhoneCall } from 'react-icons/fi';
 import { TiMessages } from 'react-icons/ti';
-import Contact from '../../assets/contact.png';
+import data from '../../data1.json'; // Assuming your JSON data is in data.json
 
 const Contact2 = () => {
+  const contactSection = data.contactSection;
+  const contactInfo = contactSection.contactInfo;
+  const formLabels = contactSection.formLabels;
+  const backgroundImage = contactSection.backgroundImage;
+
   return (
     <div className="min-h-screen p-8 bg-grey-scale-50">
       <div className="flex flex-col md:flex-row overflow-hidden">
         {/* Left Side */}
         <div className="w-full md:w-2/5 p-8">
           <h1 className="text-4xl font-bold mb-8 text-center">
-            Get in Touch with Us with Any Questions
+            {contactSection.title}
           </h1>
           <div className="space-y-6">
-            <div className="flex flex-row justify-around p-4 border bg-white rounded-2xl shadow-sm">
-              <div className="text-blue-500 text-6xl mr-4">
-                <FiPhoneCall className="mt-5" />
+            {contactInfo.map((info, index) => (
+              <div
+                key={index}
+                className="flex flex-row justify-around p-4 border bg-white rounded-2xl shadow-sm"
+              >
+                <div className="text-blue-500 text-6xl mr-4">
+                  {info.icon === 'FiPhoneCall' ? (
+                    <FiPhoneCall className="mt-5" />
+                  ) : (
+                    <TiMessages className="mt-5" />
+                  )}
+                </div>
+                <div>
+                  <h2 className="text-xl font-semibold mb-2">{info.title}</h2>
+                  <p className="text-gray-700 mb-2">{info.description}</p>
+                  {Array.isArray(info.contactDetail) ? (
+                    info.contactDetail.map((email, idx) => (
+                      <p key={idx} className="text-blue-600 font-medium">
+                        {email}
+                      </p>
+                    ))
+                  ) : (
+                    <p className="text-blue-600 font-medium">
+                      {info.contactDetail}
+                    </p>
+                  )}
+                </div>
               </div>
-              <div>
-                <h2 className="text-xl font-semibold mb-2">Contact Info</h2>
-                <p className="text-gray-700 mb-2">
-                  Open a chat or give us a call at:
-                </p>
-                <p className="text-blue-600 font-medium">+1 707 797 0462</p>
-              </div>
-            </div>
-            <div className="flex flex-row justify-around p-4 border bg-white rounded-2xl shadow-sm">
-              <div className="text-blue-500 text-6xl mr-4">
-                <TiMessages className="mt-5" />
-              </div>
-              <div>
-                <h2 className="text-xl font-semibold mb-2">Send an Email</h2>
-                <p className="text-gray-700 mb-2">Reach out to us at:</p>
-                <p className="text-blue-600 font-medium">
-                  Quomodosoft@gmail.com
-                </p>
-                <p className="text-blue-600 font-medium">
-                  abdur.rohman2003@gmail.com
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
         {/* Right Side */}
@@ -48,7 +55,7 @@ const Contact2 = () => {
             <form
               className="space-y-6 w-full"
               style={{
-                backgroundImage: `url(${Contact})`,
+                backgroundImage: `url(${backgroundImage})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
@@ -59,7 +66,7 @@ const Contact2 = () => {
                     htmlFor="first-name"
                     className="block text-sm font-medium text-black"
                   >
-                    First Name
+                    {formLabels.firstName}
                   </label>
                   <input
                     type="text"
@@ -74,7 +81,7 @@ const Contact2 = () => {
                     htmlFor="last-name"
                     className="block text-sm font-medium text-black"
                   >
-                    Last Name
+                    {formLabels.lastName}
                   </label>
                   <input
                     type="text"
@@ -91,7 +98,7 @@ const Contact2 = () => {
                     htmlFor="email"
                     className="block text-sm font-medium text-black"
                   >
-                    Email
+                    {formLabels.email}
                   </label>
                   <input
                     type="email"
@@ -106,7 +113,7 @@ const Contact2 = () => {
                     htmlFor="telephone"
                     className="block text-sm font-medium text-black"
                   >
-                    Telephone
+                    {formLabels.telephone}
                   </label>
                   <input
                     type="text"
@@ -122,7 +129,7 @@ const Contact2 = () => {
                   htmlFor="description"
                   className="block text-sm font-medium text-black"
                 >
-                  Description
+                  {formLabels.description}
                 </label>
                 <textarea
                   id="description"
@@ -136,7 +143,7 @@ const Contact2 = () => {
                 type="submit"
                 className="w-1/3 py-3 px-4 bg-blue-500 text-black font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
               >
-                Submit
+                {formLabels.submitButton}
               </button>
             </form>
           </div>

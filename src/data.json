@@ -62,27 +62,27 @@
   ],
   "buttons3": [
     {
-      "text": "FastFood",
+      "text": "All Category",
       "value": true
     },
     {
-      "text": "Fast Food",
+      "text": "Thai Cuisine",
       "value": false
     },
     {
-      "text": "FastFood",
+      "text": "Mexican",
       "value": false
     },
     {
-      "text": "FastFood",
+      "text": "Italian",
       "value": false
     },
     {
-      "text": "FastFood",
+      "text": "Vegetarian",
       "value": false
     },
     {
-      "text": "FastFood",
+      "text": "Junk Food",
       "value": false
     }
   ],
@@ -105,45 +105,57 @@
   },
   "foodItems": [
     {
-      "title": "Food Item 1",
+      "id": 7,
+      "title": "Eggplant Parmesan & Linguine",
       "image": "https://i.ibb.co/g3dMFvD/food1.png",
       "description": "Some quick example text to build on the card title and make up the bulk of the card's content.",
       "link": "#",
+      "Price": 20,
       "button": "Add to Cart"
     },
     {
-      "title": "Food Item 2",
+      "id": 8,
+      "title": "BBQ Pulled Pork Sandwich",
       "image": "https://i.ibb.co/fD2Jwf9/food2.png",
       "description": "Some quick example text to build on the card title and make up the bulk of the card's content.",
       "link": "#",
+      "Price": 20,
       "button": "Add to Cart"
     },
     {
-      "title": "Food Item 3",
+      "id": 9,
+      "title": "Quinoa-Stuffed Bell Pepper",
       "image": "https://i.ibb.co/7z3vPDG/food3.png",
       "description": "Some quick example text to build on the card title and make up the bulk of the card's content.",
       "link": "#",
+      "Price": 20,
       "button": "Add to Cart"
     },
     {
-      "title": "Food Item 4",
+      "id": 10,
+      "title": "Baked Chicken Wings and Legs",
       "image": "https://i.ibb.co/Gn7Dt8h/food4.png",
       "description": "Some quick example text to build on the card title and make up the bulk of the card's content.",
       "link": "#",
+      "Price": 20,
       "button": "Add to Cart"
     },
     {
-      "title": "Food Item 5",
+      "id": 11,
+      "title": "Fish Tacos with Chipotle Crema",
       "image": "https://i.ibb.co/5sScxG2/food5.png",
       "description": "Some quick example text to build on the card title and make up the bulk of the card's content.",
       "link": "#",
+      "Price": 20,
       "button": "Add to Cart"
     },
     {
-      "title": "Food Item 6",
-      "image": "https://i.ibb.co/fD2Jwf9/food2.png",
+      "id": 12,
+      "title": "Pork Chop with Apple Chutney",
+      "image": "https://i.ibb.co.com/MC8y36m/featured-3-9d584dcf.png",
       "description": "Some quick example text to build on the card title and make up the bulk of the card's content.",
       "link": "#",
+      "Price": 20,
       "button": "Add to Cart"
     }
   ],
@@ -186,45 +198,51 @@
     "title": "Most Popular Items",
     "items": [
       {
+        "id": 1,
         "title": "Quinoa-Stuffed Bell Pepper",
         "description1": "4 Piece Chicken",
         "description2": "Spicy Sauce",
-        "price": "30$",
+        "price": "30",
         "image": "https://i.ibb.co/mbSqCgb/popular-1-725ae64e.png"
       },
       {
+        "id": 1,
         "title": "Quinoa-Stuffed Bell Pepper",
         "description1": "4 Piece Chicken",
         "description2": "Spicy Sauce",
-        "price": "30$",
+        "price": "30",
         "image": "https://i.ibb.co/dG0nQky/popular-2-d80586b9.png"
       },
       {
+        "id": 3,
         "title": "Quinoa-Stuffed Bell Pepper",
         "description1": "4 Piece Chicken",
         "description2": "Spicy Sauce",
-        "price": "30$",
+        "price": "30",
         "image": "https://i.ibb.co/xhRBZn8/popular-3-ce0af9a8.png"
       },
       {
+        "id": 4,
         "title": "Quinoa-Stuffed Bell Pepper",
         "description1": "4 Piece Chicken",
         "description2": "Spicy Sauce",
-        "price": "30$",
+        "price": "30",
         "image": "https://i.ibb.co/s3hLvwj/popular-4-02f7e53b.png"
       },
       {
+        "id": 5,
         "title": "Quinoa-Stuffed Bell Pepper",
         "description1": "4 Piece Chicken",
         "description2": "Spicy Sauce",
-        "price": "30$",
+        "price": "30",
         "image": "https://i.ibb.co/54YD5t0/popular-5-a648c9c2.png"
       },
       {
+        "id": 6,
         "title": "Quinoa-Stuffed Bell Pepper",
         "description1": "4 Piece Chicken",
         "description2": "Spicy Sauce",
-        "price": "30$",
+        "price": "30",
         "image": "https://i.ibb.co/BjqBqcf/popular-6-1db49790.png"
       }
     ]

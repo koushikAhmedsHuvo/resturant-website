@@ -8,6 +8,7 @@ import ContactPage from './components/Page/ContactPage';
 import PrivacyPage from './components/Page/PrivacyPage';
 import MenuPage from './components/Page/MenuPage';
 import UserPage from './components/Page/UserPage';
+import Cart from './components/Page/Cart';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/menu" element={<MenuPage />} />
           <Route path="/user" element={<UserPage />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </Router>
     </>

@@ -31,7 +31,7 @@ const Resturant = () => {
         <p className="text-white w-[80%] text-lg md:text-xl mb-8 md:mb-8">
           {description}
         </p>
-        <div className="flex  flex-row  w-full justify-between space-y-4 md:space-y-0 md:space-x-4 mb-8">
+        <div className="flex  flex-row  w-full justify-center space-y-4 md:space-y-0 md:space-x-4 mb-8">
           {buttons.map((button, index) => (
             <button
               key={index}

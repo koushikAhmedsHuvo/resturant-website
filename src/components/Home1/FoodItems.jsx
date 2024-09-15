@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useContext } from 'react';
 import { FaRegHeart } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -6,9 +6,11 @@ import foodData from '../../data.json';
 import '../../css/buttonStyle.css';
 import '../../css/buttonStyle1.css';
 import { BsCartPlus } from 'react-icons/bs';
+import { CartContext } from '../context/CartContext'; // Import the Cart Context
 
 const FoodItems = () => {
   const { heading5, foodItems, buttons3 } = foodData;
+  const { addToCart } = useContext(CartContext); // Get the addToCart function from context
 
   const [buttonState, setButtonState] = useState(buttons3);
   const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
@@ -50,6 +52,10 @@ const FoodItems = () => {
     setButtonState(updatedButtons);
   };
 
+  const handleAddToCart = (item) => {
+    addToCart(item); // Add the selected item to the cart using context
+  };
+
   return (
     <div className="banner relative h-full w-full bg-cover bg-center bg-no-repeat flex flex-col lg:justify-center lg:items-center">
       <h1 className="text-3xl text-center w-11/12 ml-1 mt-10 lg:text-center lg:text-4xl lg:mt-16 lg:w-2/6">
@@ -60,7 +66,7 @@ const FoodItems = () => {
         {buttonState.map((button, index) => (
           <div key={index}>
             <button
-              className={` ${
+              className={`${
                 button.value ? 'bg-red-500' : 'bg-transparent'
               } px-2 py-2 rounded-lg`}
               onClick={() => handleButtonClick(index)}
@@ -71,14 +77,13 @@ const FoodItems = () => {
         ))}
       </div>
       {/* food item */}
-
       <div
         className="flex flex-wrap lg:justify-center mt-10"
         ref={foodItemsRef}
       >
-        {foodItems.map((item, index) => (
+        {foodItems.map((item) => (
           <div
-            key={index}
+            key={item.id} // Use item.id as the unique key
             className={`group w-11/12 lg:max-w-xs rounded overflow-hidden shadow-lg mx-3 my-2 relative ${
               visible ? 'fade-in' : 'fade-out'
             }`}
@@ -104,10 +109,16 @@ const FoodItems = () => {
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">{item.title}</div>
               <p className="text-gray-700 text-base">{item.description}</p>
+              <p className="text-gray-900 text-base font-semibold mt-2">
+                ${item.Price} {/* Check if item.Price is correct */}
+              </p>
             </div>
             <div className="px-6 py-4">
               <div className="mb-5">
-                <button className="bg-transparent border border-gray-500 text-gray-500 font-bold py-3 px-10 rounded-lg flex items-center justify-start transition duration-500 ease-in-out btn btn2 hover:bg-red-600 hover:border-red-600">
+                <button
+                  className="bg-transparent border border-gray-500 text-gray-500 font-bold py-3 px-10 rounded-lg flex items-center justify-start transition duration-500 ease-in-out btn btn2 hover:bg-red-600 hover:border-red-600"
+                  onClick={() => handleAddToCart(item)} // Add item to cart on click
+                >
                   <BsCartPlus className="mr-2 text-2xl" />
                   <span>{item.button}</span>
                 </button>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 import backgroundImage from '../../assets/categories-bg.png';
-import faqData from '../../data.json'; // Update the path accordingly
+import faqData from '../../data.json';
 
 const Faq = () => {
   const [visibleFaq, setVisibleFaq] = useState(null);
@@ -47,13 +47,13 @@ const Faq = () => {
               </div>
             ))}
           </div>
-          <div className="grid grid-cols-2 gap-4 w-full md:w-1/2">
+          <div className="grid grid-cols-2 gap-4 w-full md:w-1/2 md:-mt-32">
             {faqData.images.map((image, index) => (
-              <div className="" key={index}>
+              <div className="flex items-center justify-center" key={index}>
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className={`rounded-lg object-cover shadow-lg ${image.style}`}
+                  className={`rounded-lg object-cover shadow-lg ${image.style} w-full h-full`}
                 />
               </div>
             ))}
